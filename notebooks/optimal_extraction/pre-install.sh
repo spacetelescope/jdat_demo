@@ -9,7 +9,8 @@ filename=$(basename $FILE_URL)
 filepath="webbpsf-data/$filename"
 
 if [ ! -f "$filepath" ]; then
-    curl -v $FILE_URL -o $filepath
+    echo "Downloading File: $filepath"
+    curl $FILE_URL -o $filepath
     cd webbpsf-data
     tar -xf $filename
     cd -
